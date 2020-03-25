@@ -1,0 +1,31 @@
+@import "variables";
+@import "mixin";
+
+#postEditForm {
+    margin-top: 10rem;
+}
+
+.editor-wrapper {
+    margin-bottom: 10px;
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+    background-color: $white;
+}
+
+.full-background {
+    background-color: $gray-900;
+    width: 100vw;
+    min-height: 100vh;
+    padding-bottom: 10rem;
+}
+
+.text-white {
+    color: $white;
+}
+
+.invalid-tip {
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: $red; 
+}

@@ -1,0 +1,51 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/react-fontawesome": "^0.1.9",
+    "@pinata/sdk": "^1.1.6",
+    "@truffle/contract": "^4.1.13",
+    "antd": "^3.26.14",
+    "bootstrap": "^4.4.1",
+    "braft-editor": "^2.3.9",
+    "ipfs-http-client": "^42.0.0",
+    "jquery": "^3.4.1",
+    "node-sass": "^4.13.1",
+    "react": "16.11.0",
+    "react-dom": "16.11.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.4.0",
+    "resolve-url-loader": "^3.1.1",
+    "uuid": "^7.0.2",
+    "web3": "1.2.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@truffle/hdwallet-provider": "^1.0.33",
+    "popper.js": "^1.16.1"
+  }
+}
