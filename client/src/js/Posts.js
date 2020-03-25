@@ -20,11 +20,13 @@ class PostPage extends Component {
     }
 
     this.gotoPage = this.gotoPage.bind(this);
+    this.search = this.search.bind(this);
   }
 
   async componentDidMount() {
     const posts = await getAllPosts(this.props.ipfs, this.props.posts);
     this.setState({ 
+      allPosts: posts,
       posts,
       totalPages: parseInt((posts.length-1) / this.pageNum) + 1,
       postsShow: posts.slice(0, this.pageNum),
@@ -33,11 +35,31 @@ class PostPage extends Component {
   }
 
   gotoPage(page) {
-    const postsShow = this.state.posts.slice((page-1)*this.pageNum, page*this.pageNum);
+    const { posts } = this.state;
+    const postsShow = posts.slice((page-1)*this.pageNum, page*this.pageNum);
     this.setState({
       curPage: page,
       postsShow: postsShow,
+      totalPages: parseInt((posts.length-1) / this.pageNum) + 1,
     });
+  }
+
+  search(keyword) {
+    const { allPosts } = this.state;
+    let posts = allPosts;
+
+    if (keyword) {
+      // ignore case
+      const re = new RegExp(`/${keyword}/i`);
+      posts = allPosts.filter(post => 
+        (post.title.match(re) || (post.subtitle && post.subtitle.match(re)))
+      );
+    }
+    
+    this.setState({
+      posts: posts
+    }, () => this.gotoPage(1));
+
   }
 
   render() {
@@ -71,6 +93,9 @@ class PostPage extends Component {
               )
             )}
             <div className="clearfix">
+              {/* search */}
+              <input className="input" onChange={e => this.search(e.target.value)} placeholder="search keyword" />
+              {/* pagination */}
               <ul className="pagination float-right">
                 <li className={`page-item ${this.state.curPage === 1 ? 'disabled': ''}`} key="first">
                   <a className="page-link" href="#posts" onClick={() => this.gotoPage(1)}>&laquo;</a>
