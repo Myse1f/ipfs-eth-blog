@@ -51,11 +51,9 @@ class PostPage extends Component {
     if (keyword) {
       // ignore case
       const re = new RegExp(`${keyword}`, 'i');
-      console.log(re)
       posts = posts.filter(post => 
         (post.title.match(re) || (post.subtitle && post.subtitle.match(re)))
       );
-      console.log(posts)
     }
     
     this.setState({
