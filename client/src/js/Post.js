@@ -61,8 +61,11 @@ class Post extends Component {
       confirmLoading: true
     });
     const posts = await deletePost(contract, account, ipfs, hash, oldBlog);
-    this.props.handleUpda(posts);
-    history.push("/posts");
+    this.props.handleUpdate(posts);
+    this.setState({
+      confirmLoading: false
+    },
+    () =>history.push("/posts"));
   }
 
   handleCancel = () => {
