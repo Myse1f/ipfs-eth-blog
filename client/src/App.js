@@ -129,5 +129,5 @@ class App extends Component {
 }
 
 export default function() {
-  return (<BrowserRouter><App/></BrowserRouter>)
+  return (<BrowserRouter basename={`/ipns/${process.env.REACT_APP_IPNS}`}><App/></BrowserRouter>)
 }
