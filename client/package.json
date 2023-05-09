@@ -9,7 +9,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.9",
     "@pinata/sdk": "^1.1.6",
-    "@truffle/contract": "^4.1.13",
+    "@truffle/contract": "^4.6.20",
     "antd": "^3.26.14",
     "bootstrap": "^4.4.1",
     "braft-editor": "^2.3.9",
